@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Slack Cleanouts & Removals | Veteran-Owned Junk Removal - Brevard County, FL</title>
+    <meta name="description" content="Military-grade junk removal service in Brevard County. Veteran-owned and operated. Free estimates. Serving Melbourne, Palm Bay, Cocoa Beach, and surrounding areas.">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C7322F;
+            --dark-charcoal: #1a1a1a;
+            --off-white: #f5f5f5;
+            --steel-gray: #4a4a4a;
+            --accent-red: #8B1E1C;
+            --light-gray: #e8e8e8;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, #2a2a2a 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--off-white);
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            color: var(--primary-red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .cta-button {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(199, 50, 47, 0.4);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(199, 50, 47, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, #2d2d2d 50%, var(--steel-gray) 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(199, 50, 47, 0.1) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-text .tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            animation: slideInLeft 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--light-gray);
+            animation: slideInLeft 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: slideInLeft 0.8s ease-out 0.6s backwards;
+        }
+
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .hero-logo img {
+            max-width: 450px;
+            width: 100%;
+            filter: drop-shadow(0 10px 40px rgba(0,0,0,0.5));
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .secondary-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: white;
+            color: var(--dark-charcoal);
+        }
+
+        /* Veteran Badge Section */
+        .veteran-badge {
+            background: var(--primary-red);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .veteran-badge h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .veteran-badge h3::before,
+        .veteran-badge h3::after {
+            content: '★';
+            font-size: 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--dark-charcoal);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header .underline {
+            width: 100px;
+            height: 4px;
+            background: var(--primary-red);
+            margin: 0 auto 1.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--steel-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-left: 5px solid var(--primary-red);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left-width: 8px;
+        }
+
+        .service-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: var(--steel-gray);
+            line-height: 1.8;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 6rem 2rem;
+            background: var(--dark-charcoal);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(199, 50, 47, 0.1) 100%);
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .mission-quote {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: var(--primary-red);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .mission p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-highlight {
+            background: rgba(199, 50, 47, 0.2);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-red);
+            margin-top: 3rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-red);
+            color: white;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(199, 50, 47, 0.3);
+        }
+
+        .why-item h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .why-item p {
+            color: var(--steel-gray);
+            line-height: 1.7;
+        }
+
+        /* Service Area Section */
+        .service-area {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+
+        .service-area-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .city-badge {
+            background: white;
+            padding: 1.5rem;
+            border: 2px solid var(--light-gray);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .city-badge:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: var(--primary-red);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-width: 80px;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .contact-form h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: var(--light-gray);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-logo {
+                order: -1;
+            }
+
+            .hero-logo img {
+                max-width: 300px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-text">NO <span>SLACK</span></div>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#coverage">Coverage</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>NO SLACK<br>CLEANOUTS</h1>
+                <p class="tagline">Military-Grade Junk Removal</p>
+                <p>Founded and operated by a U.S. Air Force Pararescueman. We bring military-level discipline, reliability, and work ethic to every project. When we say we'll be there, we're there. When we say we'll get it done, it gets done.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button" onclick="location.href='tel:2392488393'">Call (239) 248-8393</button>
+                    <button class="secondary-button" onclick="location.href='#contact'">Free Estimate</button>
+                </div>
+            </div>
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="No Slack Cleanouts & Removals Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Veteran Badge -->
+    <section class="veteran-badge">
+        <h3>VETERAN OWNED AND OPERATED</h3>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>OUR SERVICES</h2>
+                <div class="underline"></div>
+                <p>From single-item pickups to full property cleanouts, we handle it all with precision and professionalism.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Full Property Cleanouts</h3>
+                    <p>Complete property clearing for homes, apartments, or commercial spaces. We handle everything from start to finish.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Estate & Foreclosure Cleanups</h3>
+                    <p>Sensitive, thorough cleanouts for estate sales and foreclosed properties. We treat every property with respect.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Furniture & Appliance Removal</h3>
+                    <p>Safe removal and disposal of furniture, appliances, and large items. No job too big or small.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Construction Debris Removal</h3>
+                    <p>Efficient cleanup of construction waste, renovation debris, and demolition materials.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Garage, Attic & Shed Cleanouts</h3>
+                    <p>Reclaim your space with thorough cleanouts of garages, attics, sheds, and storage areas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Light Demolition</h3>
+                    <p>Careful demolition work for interior tear-outs, deck removal, and structural preparation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="about" class="mission">
+        <div class="mission-content">
+            <h2>OUR MISSION</h2>
+            <p class="mission-quote">"Do the job right. Every time. No excuses."</p>
+            <p>No Slack Cleanouts & Removals was built on one simple principle: excellence without compromise. Founded and operated by a U.S. Air Force Pararescueman, we bring military-level discipline, reliability, and work ethic to every project.</p>
+            <p>In our line of work, details matter. Timelines matter. Accountability matters. That mindset carries over into everything we do.</p>
+            <div class="mission-highlight">
+                <p>Whether it's a single-item pickup or a full home cleanout, we show up on time, work efficiently, and leave your property clean and ready for what's next.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <div class="section-header">
+                <h2>WHY CHOOSE NO SLACK</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <h3>Veteran Owned</h3>
+                    <p>Military discipline and reliability in every job. We operate with the same precision and accountability we learned in service.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">$</div>
+                    <h3>Lowest Prices</h3>
+                    <p>Competitive pricing without sacrificing quality. We believe in fair rates and transparent billing.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Quick scheduling and efficient work. We respect your time and get the job done right the first time.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">★</div>
+                    <h3>Professional Service</h3>
+                    <p>Courteous, uniformed crew. Clean trucks. No surprises. Just professional service from start to finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section id="coverage" class="service-area">
+        <div class="service-area-container">
+            <div class="section-header">
+                <h2>PROUDLY SERVING BREVARD COUNTY</h2>
+                <div class="underline"></div>
+                <p>Providing professional junk removal and cleanout services throughout Brevard County, Florida</p>
+            </div>
+            <div class="cities-grid">
+                <div class="city-badge">Melbourne</div>
+                <div class="city-badge">Palm Bay</div>
+                <div class="city-badge">Rockledge</div>
+                <div class="city-badge">Merritt Island</div>
+                <div class="city-badge">Cocoa</div>
+                <div class="city-badge">Cocoa Beach</div>
+                <div class="city-badge">Satellite Beach</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>GET YOUR FREE ESTIMATE</h2>
+                <div class="underline"></div>
+                <p>Ready to clear out that junk? Contact us today for a free, no-obligation estimate.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:2392488393" style="color: white; text-decoration: none;">(239) 248-8393</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:noslackcleanouts@gmail.com" style="color: white; text-decoration: none;">noslackcleanouts@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Hours:</strong>
+                            <span>7:00 AM - 5:00 PM<br>Monday - Sunday</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Service:</strong>
+                            <span>Brevard County, FL</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <button class="cta-button" onclick="location.href='tel:2392488393'">Call Now for Free Estimate</button>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Request a Quote</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="Your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Details</label>
+                            <textarea placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 No Slack Cleanouts & Removals. All rights reserved. | Veteran Owned & Operated | Serving Brevard County, FL</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you shortly at the provided phone number or email.');
+            this.reset();
+        });
+
+        // Mobile menu toggle (placeholder - full implementation would require additional HTML)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
